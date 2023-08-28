@@ -1,0 +1,24 @@
+#Thu Aug 24 06:34:53 GMT 2023
+micronaut:
+  application:
+    name: kotlindemo
+
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/songs
+    driver-class-name: org.postgresql.Driver
+    db-type: postgresql
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+r2dbc:
+  datasources:
+    default:
+      url: r2dbc:postgresql://localhost:5432/songs
+      dialect: POSTGRES
+      db-type: postgresql
+      username: ${DB_USERNAME}
+      password: ${DB_PASSWORD}
+flyway:
+  datasources:
+    default:
+      enabled: true
